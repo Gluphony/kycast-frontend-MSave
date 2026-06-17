@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #050B14; 
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+/* --- SECCIÓN PRINCIPAL (HERO) --- */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  background-color: #050B14;
+  background-image: radial-gradient(circle at bottom, #112A46 0%, #050B14 70%);
+  overflow: hidden;
+}
+
+.earth-bg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150vw;
+  height: 40vh;
+  background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') no-repeat center top;
+  background-size: cover;
+  border-radius: 50% 50% 0 0;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.hero-content-wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* --- NAV --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.logo-text h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.logo-text p {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  margin: 0;
+  color: #5EE2FF;
+}
+
+.menu-icon {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: white;
+  transition: color 0.3s;
+}
+
+/* --- HERO MAIN --- */
+.hero-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  text-shadow: 0px 4px 10px rgba(0,0,0,0.8);
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+  color: #d1d5db;
+}
+
+.subscribe-btn {
+  background-color: white;
+  color: #041024;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* --- CIUDADES DESTACADAS --- */
+.featured-cities-container {
+  padding: 40px 20px;
+  margin-bottom: 20px;
+}
+
+.featured-cities-grid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Permite que se acomoden en pantallas pequeñas */
+}
+
+.featured-city-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+}
+
+.featured-emoji {
+  font-size: 3rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.featured-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Fuerza alineación a la izquierda */
+}
+
+.featured-info h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: pre-line;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.featured-info .desc {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+}
+
+.featured-info .temp {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+/* --- SECCIÓN BLANCA (GLOBALES) --- */
+.global-section {
+  background-color: #ffffff;
+  padding: 80px 50px;
+  color: #0A1128;
+}
+
+.global-title {
+  text-align: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+.weather-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Fuerza 2 columnas */
+  column-gap: 80px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.weather-list-item {
+  display: flex;
+  align-items: center;
+  padding: 25px 0;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.weather-list-item:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+.weather-emoji {
+  font-size: 3rem;
+  margin-right: 20px;
+}
+
+.weather-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Asegura que el texto esté a la izquierda */
+}
+
+.weather-city {
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.weather-temp {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+/* --- MENÚ LATERAL --- */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 320px;
+  height: 100vh;
+  background-color: #050B14; 
+  box-shadow: -5px 0 20px rgba(0,0,0,0.7);
+  z-index: 1000;
+  transition: right 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.close-btn {
+  font-size: 2.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.menu-links {
+  list-style: none;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.menu-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+  margin: 10px 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  z-index: 999;
+}
+
+/* --- FOOTER --- */
+.footer-section {
+  background-color: #050B14;
+  padding: 40px 50px;
+  border-top: 1px solid #112A46;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Evita que colapse en pantallas pequeñas */
+  gap: 20px;
+}
+
+.footer-copy {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 20px; /* Aquí está el fix para separar FB IG TW */
+  font-weight: 700;
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+  .weather-grid {
+    grid-template-columns: 1fr; /* 1 columna en celulares */
+  }
+  .weather-list-item:nth-last-child(2) {
+    border-bottom: 1px solid #cbd5e1;
+  }
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .featured-cities-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
