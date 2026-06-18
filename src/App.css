@@ -1,3 +1,4 @@
+/* Ruta del archivo: src/App.css */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700&display=swap');
 
 * {
@@ -18,17 +19,19 @@ body {
   position: relative;
   min-height: 100vh;
   background-color: #050B14;
+  /* Degradado oscuro exacto [cite: image_36d124.jpg] */
   background-image: radial-gradient(circle at bottom, #112A46 0%, #050B14 70%);
   overflow: hidden;
 }
 
+/* La curva de la Tierra de fondo FIXED [cite: image_36d124.jpg] */
 .earth-bg {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 150vw;
-  height: 40vh;
+  width: 150vw; /* Ancho extra para la curva */
+  height: 40vh; /* Alto de la curva */
   background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop') no-repeat center top;
   background-size: cover;
   border-radius: 50% 50% 0 0;
@@ -44,7 +47,7 @@ body {
   min-height: 100vh;
 }
 
-/* --- NAV --- */
+/* --- BARRA DE NAVEGACIÓN --- */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -80,7 +83,11 @@ body {
   transition: color 0.3s;
 }
 
-/* --- HERO MAIN --- */
+.menu-icon:hover {
+  color: #5EE2FF;
+}
+
+/* --- CONTENIDO CENTRAL HERO --- */
 .hero-main {
   flex-grow: 1;
   display: flex;
@@ -97,6 +104,7 @@ body {
   letter-spacing: 2px;
   margin-bottom: 15px;
   text-shadow: 0px 4px 10px rgba(0,0,0,0.8);
+  text-transform: uppercase;
 }
 
 .hero-subtitle {
@@ -120,10 +128,14 @@ body {
   transition: 0.3s;
 }
 
-/* --- CIUDADES DESTACADAS --- */
+.subscribe-btn:hover {
+  background-color: #e2e8f0;
+}
+
+/* --- CIUDADES DESTACADAS (Fila sobre la Tierra) [cite: image_37b642.jpg] --- */
 .featured-cities-container {
   padding: 40px 20px;
-  margin-bottom: 20px;
+  margin-bottom: 20px; /* Espacio antes de la sección blanca */
 }
 
 .featured-cities-grid {
@@ -133,7 +145,7 @@ body {
   gap: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: wrap; /* Permite que se acomoden en pantallas pequeñas */
+  flex-wrap: wrap; /* Para responsivo */
 }
 
 .featured-city-card {
@@ -157,7 +169,7 @@ body {
 .featured-info h4 {
   font-size: 0.9rem;
   font-weight: 700;
-  white-space: pre-line;
+  white-space: pre-line; /* Respeta \n del backend */
   margin-bottom: 5px;
   line-height: 1.2;
 }
@@ -173,7 +185,7 @@ body {
   margin-top: 5px;
 }
 
-/* --- SECCIÓN BLANCA (GLOBALES) --- */
+/* --- SECCIÓN BLANCA (CONDICIONES GLOBALES) [cite: image_36d0ac.png] --- */
 .global-section {
   background-color: #ffffff;
   padding: 80px 50px;
@@ -186,11 +198,12 @@ body {
   font-size: 3rem;
   margin-bottom: 60px;
   letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .weather-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Fuerza 2 columnas */
+  grid-template-columns: 1fr 1fr; /* 2 columnas fijas */
   column-gap: 80px;
   max-width: 1000px;
   margin: 0 auto;
@@ -200,9 +213,10 @@ body {
   display: flex;
   align-items: center;
   padding: 25px 0;
-  border-bottom: 1px solid #cbd5e1;
+  border-bottom: 1px solid #cbd5e1; /* Línea separadora gris */
 }
 
+/* Quita el borde a los últimos dos elementos en PC */
 .weather-list-item:nth-last-child(-n+2) {
   border-bottom: none;
 }
@@ -215,7 +229,7 @@ body {
 .weather-details {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Asegura que el texto esté a la izquierda */
+  align-items: flex-start; /* Texto a la izquierda */
 }
 
 .weather-city {
@@ -230,17 +244,17 @@ body {
   font-weight: 400;
 }
 
-/* --- MENÚ LATERAL --- */
+/* --- MENÚ LATERAL (SIDEBAR) RECTIFICADO [cite: image_36d06d.png] --- */
 .side-menu {
   position: fixed;
   top: 0;
-  right: -320px;
-  width: 320px;
+  right: -360px; /* Ancho ajustado */
+  width: 360px;
   height: 100vh;
-  background-color: #050B14; 
-  box-shadow: -5px 0 20px rgba(0,0,0,0.7);
+  background-color: #06101E; 
+  box-shadow: -8px 0 30px rgba(0,0,0,0.8);
   z-index: 1000;
-  transition: right 0.4s ease;
+  transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   display: flex;
   flex-direction: column;
 }
@@ -253,8 +267,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 30px 24px;
+}
+
+.menu-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  color: white;
+  letter-spacing: 2px;
 }
 
 .close-btn {
@@ -263,32 +283,63 @@ body {
   border: none;
   color: white;
   cursor: pointer;
+  line-height: 1;
+}
+
+.menu-content {
+  flex-grow: 1;
+  padding: 0 16px;
+  overflow-y: auto;
 }
 
 .menu-links {
   list-style: none;
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 8px;
 }
 
 .menu-links li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
+  padding: 14px 20px;
+  color: #A0aec0;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+/* Iconos del panel */
+.panel-icon {
+  font-size: 1.4rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+}
+
+/* Hover e ítem Activo [cite: image_36d06d.png] */
+.menu-links li a:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.menu-links li.active a {
+  color: white;
+  background-color: #122B47; /* Fondo azul destacado del diseño original */
 }
 
 .menu-divider {
   border: 0;
   height: 1px;
   background: rgba(255,255,255,0.1);
-  margin: 10px 0;
+  margin: 20px 10px;
 }
 
+/* CAPA OSCURA AL ABRIR MENÚ */
 .overlay {
   position: fixed;
   top: 0;
@@ -296,6 +347,7 @@ body {
   width: 100vw;
   height: 100vh;
   background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
   z-index: 999;
 }
 
@@ -312,7 +364,7 @@ body {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: wrap; /* Evita que colapse en pantallas pequeñas */
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -323,17 +375,21 @@ body {
 
 .social-links {
   display: flex;
-  gap: 20px; /* Aquí está el fix para separar FB IG TW */
+  gap: 20px; /* Separa FB IG TW */
   font-weight: 700;
 }
 
 /* --- RESPONSIVO --- */
 @media (max-width: 768px) {
   .weather-grid {
-    grid-template-columns: 1fr; /* 1 columna en celulares */
+    grid-template-columns: 1fr; /* 1 columna en celular */
   }
+  /* Borde abajo para todos menos el último en celular */
   .weather-list-item:nth-last-child(2) {
     border-bottom: 1px solid #cbd5e1;
+  }
+  .weather-list-item:last-child {
+    border-bottom: none;
   }
   .hero-title {
     font-size: 3.5rem;
@@ -345,5 +401,8 @@ body {
   .footer-content {
     flex-direction: column;
     text-align: center;
+  }
+  .side-menu {
+    width: 300px;
   }
 }
